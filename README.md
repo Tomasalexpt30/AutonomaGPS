@@ -53,32 +53,9 @@ The app uses **Bluetooth Low Energy (BLE) Beacons** strategically placed across 
 
 ## System Architecture
 
-```mermaid
-flowchart TD
-    A["App Launch"] --> B["Splash Screen"]
-    B --> C["Home Page"]
-    C --> D["Navigation Mode"]
-    C --> E["Guided Tour Mode"]
-    C --> F["Settings"]
-    D --> D1["Destination Selection"]
-    D1 --> D2["BLE Beacon Detection"]
-    D2 --> D3["Dijkstra Algorithm"]
-    D3 --> D4["TTS Audio Instructions"]
-    D4 --> D5["Position Update"]
-    D5 --> D2
-    E --> E1["Tour Selection"]
-    E1 --> E2["Guided Tour Active"]
-    F --> F1["Sound & TTS"]
-    F --> F2["Accessibility"]
-    F --> F3["Map"]
-    F --> F4["Personalisation"]
-    F --> F5["Language"]
-
-    classDef page fill:#3b3b3b,color:#fff,stroke:#888,stroke-width:1.5px
-    classDef feature fill:#1e3a5f,color:#fff,stroke:#4a90d9,stroke-width:1.5px
-    class A,B,C page
-    class D,E,F,D1,D2,D3,D4,D5,E1,E2,F1,F2,F3,F4,F5 feature
-```
+<p align="center">
+  <img src="assets/images/panels/24.png" width="2500">
+</p>
 
 ## Pages & Functionality
 
@@ -280,6 +257,7 @@ Project developed as part of the **Bachelor's Degree in Computer Engineering** a
 | Guilherme Monteiro Brito | 30010959 |
 
 > **Supervisor:** Professor Doutor Mário Marques da Silva | **July 2025**
+
 
 
 
