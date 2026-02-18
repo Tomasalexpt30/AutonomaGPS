@@ -17,17 +17,16 @@
 
 </div>
 
-> ## Full Documentation
+## About the Project
+
 > This README provides a structured overview of the project. For a comprehensive and in-depth explanation of every technical decision, system architecture, beacon mapping, algorithm implementation, challenges faced, and future work **read the full report**:
 >
 > **[Access the Full Project Report](android/report/Report.pdf)** &nbsp;|&nbsp; **[Watch the Project Video](https://www.youtube.com/watch?v=wC5PRanA4iI)**
 >
 
-## About the Project
-
 Independent mobility in indoor environments remains a major challenge for visually impaired people, especially in complex spaces like a university campus. **Autónoma GPS** was developed in direct response to this need, in collaboration with the **Office for Inclusion and University Resilience (GIRU)** at UAL and with the direct input of a blind student from the institution itself.
 
-The app uses **Bluetooth Low Energy (BLE) Beacons** strategically placed across all floors of the building (Floor -1 to Floor 4) to determine the user's position in real time. Based on that location, the system calculates the most efficient route using **Dijkstra's Algorithm** and delivers clear, adapted audio instructions — enabling fully autonomous navigation indoors.
+The app uses **Bluetooth Low Energy (BLE) Beacons** strategically placed across all floors of the building (Floor -1 to Floor 4) to determine the user's position in real time. Based on that location, the system calculates the most efficient route using **Dijkstra's Algorithm** and delivers clear, adapted audio instructions - enabling fully autonomous navigation indoors.
 
 ### Highlights
 - **38 beacons** installed across 6 floors of the UAL campus
@@ -87,13 +86,28 @@ flowchart TD
 
 The initial screen displaying the **Autónoma GPS** visual identity, initialising the beacon connection and loading the user's saved preferences. On first launch, it also presents the Privacy Policy popup for informed consent.
 
+<p align="center">
+  <img src="assets/images/panels/11.png" width="180">
+</p>
+
 ### 2. Home Page
 
-The central hub of the app, providing direct access to the two main modes — **Navigation** and **Guided Tour** — as well as the app settings.
+The central hub of the app, providing direct access to the two main modes: **Navigation** and **Guided Tour**, as well as the app settings.
+
+<p align="center">
+  <img src="assets/images/panels/12.png" width="180">
+</p>
 
 ### 3. Navigation Mode
 
 The functional core of the system. The user selects a destination (by tap or voice command) and the app calculates the most efficient route based on the current position estimated by the nearest BLE beacons.
+
+<p align="center">
+  <img src="assets/images/panels/14.png" width="180">
+  <img src="assets/images/panels/15.png" width="180">
+  <img src="assets/images/panels/16.png" width="180">
+  <img src="assets/images/panels/17.png" width="180">
+</p>
 
 **How it works:**
 
@@ -104,15 +118,26 @@ The functional core of the system. The user selects a destination (by tap or voi
 5. Position is continuously updated as the user moves
 6. If the user deviates from the route, the system automatically recalculates
 
-> 💡 Voice command mode enables a fully hands-free experience — users can select destinations, access favourites, and control navigation using only their voice.
+> 💡 Voice command mode enables a fully hands-free experience, users can select destinations, access favourites, and control navigation using only their voice.
 
 ### 4. Guided Tour Mode
 
 Allows the user to follow a **pre-defined route** through the campus points of interest, with automatic narration at each location. Ideal for new students or visitors who want to explore the facilities independently.
 
+<p align="center">
+  <img src="assets/images/panels/19.png" width="180">
+  <img src="assets/images/panels/20.png" width="180">
+  <img src="assets/images/panels/21.png" width="180">
+  <img src="assets/images/panels/22.png" width="180">
+  <img src="assets/images/panels/23.png" width="180">
+</p>
+
 > ⚠️ In the current version, the tour always starts from the main entrance. The ability to start from any point is planned for future development.
 
 ### 5. Settings
+<p align="center">
+  <img src="assets/images/panels/13.png" width="180">
+</p>
 
 Full control over the app experience, organised into five sections:
 
@@ -124,11 +149,14 @@ Full control over the app experience, organised into five sections:
 | **Personalisation** | Light/dark theme and visual settings |
 | **Language** | Portuguese / English / French |
 
----
+## Hardware - BLE Beacons
 
-## Hardware — BLE Beacons
+<p align="center">
+  <img src="assets/images/panels/2.png" width="150">
+  <img src="assets/images/panels/3.png" width="150">
+</p>
 
-The system uses **38 beacons** distributed across all 6 floors of the UAL building (Floor -1 to Floor 4), using Apple's **iBeacon** protocol — compatible with both Android and iOS.
+The system uses **38 beacons** distributed across all 6 floors of the UAL building (Floor -1 to Floor 4), using Apple's **iBeacon** protocol, compatible with both Android and iOS.
 
 | Model | Manufacturer | Role | Protocol | Battery |
 |-------|-------------|------|----------|---------|
@@ -137,13 +165,25 @@ The system uses **38 beacons** distributed across all 6 floors of the UAL buildi
 
 The Holyiot Y1 beacons were selected for the final deployment due to their **superior robustness, battery life, signal stability and ease of configuration** compared to the initial test models.
 
-**Each beacon is identified by:**
-- **UUID** — Unique identifier for the project's beacon set
-- **Major** — Identifies the floor/zone within the building
-- **Minor** — Identifies the specific location within the floor
-- **RSSI / Tx Power** — Used to estimate the distance between the user and the beacon
+<p align="center">
+  <img src="assets/images/panels/18.png" width="600">
+</p>
 
-**Floor distribution:**
+**Each beacon is identified by:**
+- **UUID** - Unique identifier for the project's beacon set
+- **Major** - Identifies the floor/zone within the building
+- **Minor** - Identifies the specific location within the floor
+- **RSSI / Tx Power** - Used to estimate the distance between the user and the beacon
+
+## Floor Distribution
+
+<p align="center">
+  <img src="assets/images/panels/5.png" width="180">
+  <img src="assets/images/panels/6.png" width="180">
+  <img src="assets/images/panels/7.png" width="180">
+  <img src="assets/images/panels/8.png" width="180">
+  <img src="assets/images/panels/9.png" width="180">
+</p>
 
 | Floor | Beacons Installed |
 |-------|-------------------|
@@ -154,9 +194,7 @@ The Holyiot Y1 beacons were selected for the final deployment due to their **sup
 | Floor 3 | Covered |
 | Floor 4 | Covered |
 
-> For detailed beacon placement maps and individual positioning, refer to the **[Full Project Report](#)**.
-
----
+> For detailed beacon placement maps and individual positioning, refer to the **[Full Project Report](android/report/Report.pdf)**.
 
 ## Dijkstra's Algorithm
 
@@ -168,26 +206,27 @@ The Holyiot Y1 beacons were selected for the final deployment due to their **sup
 
 **Execution steps within the app:**
 
-1. **Graph construction** — physical UAL map converted into a beacon graph
-2. **Origin node** — beacon closest to the user (highest RSSI)
-3. **Route calculation** — Dijkstra finds the lowest-cost path to the destination
-4. **Instruction delivery** — ordered beacon list converted into audio directions
-5. **Real-time adaptation** — route deviations trigger automatic recalculation
+1. **Graph construction** - physical UAL map converted into a beacon graph
+2. **Origin node** - beacon closest to the user (highest RSSI)
+3. **Route calculation** - Dijkstra finds the lowest-cost path to the destination
+4. **Instruction delivery** - ordered beacon list converted into audio directions
+5. **Real-time adaptation** - route deviations trigger automatic recalculation
 
----
+## Technologies
 
-## Flutter Libraries
-
-| Library | Purpose |
-|---------|---------|
-| **flutter_blue** | BLE beacon detection and signal reading |
-| **flutter_tts** | Text-to-Speech for audio instructions |
-| **speech_to_text** | Voice command recognition |
-| **easy_localization** | Multilingual UI system via JSON |
-| **provider** | Global state management and preferences |
-| **shared_preferences** | Persistence of favourites and settings |
-
----
+| Technology | Purpose |
+|------------|---------|
+| **Flutter 3.19+** | Cross-platform UI framework (Android & iOS) |
+| **Dart 3.9** | Core application language |
+| **Bluetooth Low Energy (BLE)** | Indoor positioning via beacons |
+| **iBeacon Protocol** | Beacon communication standard |
+| **Dijkstra's Algorithm** | Optimal route calculation through the beacon graph |
+| **Text-to-Speech (TTS)** | Real-time audio instructions |
+| **Voice Recognition** | Hands-free control via voice commands |
+| **JSON** | Route storage, translations and voice commands |
+| **Visual Studio Code** | Initial development environment |
+| **Android Studio** | Main IDE for build and physical device testing |
+| **GitHub** | Version control and team collaboration |
 
 ## Setup & Installation
 
@@ -216,96 +255,22 @@ flutter run
 
 > **Note:** To test navigation features with real beacons, a physical Android device in developer mode is required, connected via USB to the computer running Android Studio.
 
----
-
-## Budget
-
-All hardware costs were fully covered by the **Universidade Autónoma de Lisboa**, as part of the project grant application.
-
-| Component | Brand | Qty | Unit Cost | Subtotal |
-|-----------|-------|-----|-----------|----------|
-| Test Beacons | DUOWEISI | 3 | €4.92 | €14.76 |
-| Final Beacons | Holyiot Y1 | 35 | €5.58 | €195.30 |
-| CR2032 Batteries | Duracell | 3 | €2.63 | €7.90 |
-| CR2477 Batteries | Panasonic | 40 | €4.12 | €164.80 |
-| Shipping Fees | — | — | — | €18.96 |
-| **Total** | | | | **~€401.72** |
-
----
-
-## Challenges & Solutions
-
-| # | Challenge | Solution |
-|---|-----------|----------|
-| 1 | Flutter installation with SDK version conflicts | In-depth review of official documentation and group troubleshooting sessions |
-| 2 | No prior experience with the Dart language | Intensive self-study using official materials, online courses and tutorials |
-| 3 | DUOWEISI beacons had weak signal and short battery life | Replaced with Holyiot Y1, which showed superior real-world performance |
-| 4 | VS Code limited for testing on physical devices | Migrated to Android Studio with USB device mirroring support |
-| 5 | App unable to detect or communicate with beacons in early tests | Deep study of manufacturer technical documentation and hands-on testing sessions |
-| 6 | Navigation instructions insufficient for multiple approach directions | Redesigned data structure using triplets: `origin – midpoint – destination` |
-| 7 | Beacons detected at long range caused positioning interference | Implemented RSSI threshold filtering to ignore weak/distant signals |
-
----
-
-## Future Work
-
-The system is fully functional, but the team identified several improvements for future versions:
-
-**Immediate Improvements**
-- Refine navigation instruction detail on some routes
-- Improve beacon signal capture in outdoor campus areas
-- Allow the Guided Tour to start from any point, not just the main entrance
-- Enable resuming the tour after interruption without restarting from the beginning
-
-**Inertial Sensors (Dead Reckoning)**
-Integration of the device's accelerometer, gyroscope and magnetometer to estimate the user's position in areas without beacon coverage, increasing navigation robustness and continuity.
-
-**Database (Firebase)**
-Firebase integration for centralised map management, remote route updates, and future scalability of the system to other buildings.
-
-**Artificial Intelligence**
-Incorporate AI for dynamic route adaptation based on usage patterns, obstacle detection, and progressive personalisation of the navigation experience.
-
----
-
 ## Documentation & Media
 
 <div align="center">
 
-| | Resource | Description |
-|-|----------|-------------|
-| 📄 | **[Full Project Report](#)** | Complete technical documentation — architecture, beacon mapping, algorithm details, results and more |
-| 📰 | **[News Coverage](#)** | Media coverage of the Autónoma GPS project |
-| 💻 | **[GitHub Repository](https://github.com/Tomasalexpt30/autonoma-gps)** | Source code and project files |
-| 🏛️ | **[GIRU — UAL](https://autonoma.pt/info-giru/)** | Office for Inclusion and University Resilience |
+| Resource | Description |
+|----------|-------------|
+| **[Full Project Report](android/report/Report.pdf)** | Complete technical documentation - architecture, beacon mapping, algorithm details, results and more |
+| **[Project Video](https://www.youtube.com/watch?v=wC5PRanA4iI)** | Media coverage of the Autónoma GPS project |
+| **[GitHub Repository](https://github.com/Tomasalexpt30/autonoma-gps)** | Source code and project files |
+| **[GIRU — UAL](https://autonoma.pt/info-giru/)** | Office for Inclusion and University Resilience |
 
 </div>
 
-> If you want to understand the full depth of this project — every technical decision, the complete beacon layout, the interview with the blind student, the budget justification, and the academic conclusions — **the report is the place to go.**
-
----
-
-## Technologies
-
-| Technology | Purpose |
-|------------|---------|
-| **Flutter 3.19+** | Cross-platform UI framework (Android & iOS) |
-| **Dart 3.9** | Core application language |
-| **Bluetooth Low Energy (BLE)** | Indoor positioning via beacons |
-| **iBeacon Protocol** | Beacon communication standard |
-| **Dijkstra's Algorithm** | Optimal route calculation through the beacon graph |
-| **Text-to-Speech (TTS)** | Real-time audio instructions |
-| **Voice Recognition** | Hands-free control via voice commands |
-| **JSON** | Route storage, translations and voice commands |
-| **Visual Studio Code** | Initial development environment |
-| **Android Studio** | Main IDE for build and physical device testing |
-| **GitHub** | Version control and team collaboration |
-
----
-
 ## Authors
 
-Project developed as part of the **Bachelor's Degree in Computer Engineering** at **Universidade Autónoma de Lisboa — Luís de Camões**.
+Project developed as part of the **Bachelor's Degree in Computer Engineering** at **Universidade Autónoma de Lisboa.
 
 | Student | Number |
 |---------|--------|
@@ -316,10 +281,6 @@ Project developed as part of the **Bachelor's Degree in Computer Engineering** a
 
 > **Supervisor:** Professor Doutor Mário Marques da Silva | **July 2025**
 
----
 
-<div align="center">
-  <sub>Built with care to promote inclusion at Universidade Autónoma de Lisboa</sub>
-</div>
 
 
